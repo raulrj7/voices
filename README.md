@@ -55,10 +55,28 @@ Antes de levantar el proyecto, asegúrate de tener instalado lo siguiente:
     REDIS_PORT=6379
     ```
 
-5. Levanta la API en modo desarrollo:
+### Configuración de la Base de Datos
+
+1. Aplica las migraciones para crear las tablas:
+    ```bash
+    npx prisma migrate deploy
+    ```
+
+### Levantamiento de API    
+
+1. Levanta la API en modo desarrollo:
     ```bash
     npm run start:dev
     ```
+
+### Documentación de la API (Swagger)
+
+Una vez que la API esté levantada, puedes acceder a la documentación de Swagger en la siguiente URL:
+
+- **URL local**: [http://localhost:3000/api](http://localhost:3000/api)
+
+Esta documentación te permite explorar y probar los endpoints de la API directamente desde tu navegador.
+
 
 ## Endpoints
 
@@ -85,6 +103,10 @@ Antes de levantar el proyecto, asegúrate de tener instalado lo siguiente:
 ## Estructura de Archivos
 
 El proyecto sigue la estructura estándar de un proyecto NestJS:
+
+Los scripts de configuración y migración de la base de datos están en las carpetas prisma y migrations.
+
+El archivo ERD.svg contiene el diagrama de entidad-relación para visualizar la estructura de la base de datos.
 
 
 

@@ -48,12 +48,8 @@ Antes de levantar el proyecto, asegúrate de tener instalado lo siguiente:
 
     Esto iniciará los servicios de PostgreSQL y Redis.
 
-4. Configura las variables de entorno en un archivo `.env`:
-    ```env
-    DATABASE_URL=postgresql://postgres:45D3p0rT3D3v@localhost:5432/voices
-    REDIS_HOST=localhost
-    REDIS_PORT=6379
-    ```
+4. Configura las variables de entorno, generar un archivo con nombre `.env` en la raiz del proyecto:
+
 
 ### Configuración de la Base de Datos
 

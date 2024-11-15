@@ -1,5 +1,5 @@
 datasource db {
-  provider = "postgresql" // Cambia esto si usas otro proveedor de base de datos
+  provider = "postgresql" 
   url      = env("DATABASE_URL")
 }
 
@@ -12,16 +12,16 @@ generator erd {
 }
 
 model SuccessMessage {
-  id       Int      @id @default(autoincrement()) // Identificador único con auto-incremento
-  number   String   // Número asociado al mensaje
-  message  String   // Mensaje de éxito
-  createdAt DateTime @default(now()) // Fecha de creación
+  id       Int      @id @default(autoincrement()) 
+  number   String   
+  message  String   
+  createdAt DateTime @default(now())
 }
 
 model ErrorMessage {
-  id        Int      @id @default(autoincrement()) // Identificador único con auto-incremento
-  number    String?  // Número asociado al mensaje de error, opcional
-  message   String?  // Mensaje de error, opcional
-  error     String   // Detalles del error
-  createdAt DateTime @default(now()) // Fecha de creación
+  id        Int      @id @default(autoincrement()) 
+  number    String?
+  message   String?
+  error     String
+  createdAt DateTime @default(now()) 
 }

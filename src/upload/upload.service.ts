@@ -184,9 +184,8 @@ export class UploadService {
   async searchMessages(dto: SearchMessagesDto) {
     try {
       const { number, startDate, endDate, message, page, pageSize } = dto;
-      const skip = (page - 1) * pageSize;
-      const take = pageSize;
-
+      const skip = Number((page - 1) * pageSize);
+      const take = Number(pageSize);
       const query = await this.prisma.successMessage.findMany({
         where: {
           ...(number && { number: { contains: number } }),
@@ -198,8 +197,8 @@ export class UploadService {
           }),
           ...(message && { message: { contains: message } }),
         },
-        skip,
-        take,
+        skip: skip? skip: 0,
+        take: take? take: 10,
       });
 
       const totalRecords = await this.prisma.successMessage.count({
@@ -219,9 +218,9 @@ export class UploadService {
         data: query,
         meta: {
           totalRecords,
-          page,
-          pageSize,
-          totalPages: Math.ceil(totalRecords / pageSize),
+          page: page? Number(page) : 1,
+          pageSize: pageSize? Number(pageSize): 10,
+          totalPages: Math.ceil(totalRecords / (pageSize ? Number(pageSize): 10)),
         },
       };
     } catch (error) {

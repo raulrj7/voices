@@ -1,0 +1,91 @@
+{
+	"info": {
+		"_postman_id": "42f00af9-b2f9-4f26-943c-95a097bd5fd8",
+		"name": "voices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11347857"
+	},
+	"item": [
+		{
+			"name": "upload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/Users/octavio/Downloads/registros_100k.csv"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/upload/csv",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"upload",
+						"csv"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get registers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/upload/search-messages?page=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"upload",
+						"search-messages"
+					],
+					"query": [
+						{
+							"key": "number",
+							"value": "6106601575",
+							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": "2"
+						},
+						{
+							"key": "pageSize",
+							"value": "10",
+							"disabled": true
+						},
+						{
+							"key": "startDate",
+							"value": "2024-11-14",
+							"disabled": true
+						},
+						{
+							"key": "endDate",
+							"value": "2024-11-16",
+							"disabled": true
+						},
+						{
+							"key": "message",
+							"value": "Tienes un saldo",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

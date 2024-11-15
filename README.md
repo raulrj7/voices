@@ -124,6 +124,6 @@ El archivo ERD.svg contiene el diagrama de entidad-relación para visualizar la 
 
 El procesamiento de archivos CSV se maneja en lotes. Si el número de registros supera el límite predefinido (en este caso, 100000 registros), se utiliza el método `COPY` de PostgreSQL para insertar los registros en la base de datos de manera eficiente. Si el número de registros es menor, se inserta utilizando el método `createMany` de Prisma.
 
-## Notificaciones y Progreso en Tiempo Real
+## Notificaciones y Progreso en Tiempo Real(futura version)
 
 Para mantener al usuario informado del progreso, la API puede emitir eventos en tiempo real utilizando **WebSocket**. Esto permite mostrar el estado del procesamiento de los registros a medida que avanzan en los lotes.

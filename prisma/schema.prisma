@@ -1,0 +1,27 @@
+datasource db {
+  provider = "postgresql" // Cambia esto si usas otro proveedor de base de datos
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+generator erd {
+  provider = "prisma-erd-generator"
+}
+
+model SuccessMessage {
+  id       Int      @id @default(autoincrement()) // Identificador único con auto-incremento
+  number   String   // Número asociado al mensaje
+  message  String   // Mensaje de éxito
+  createdAt DateTime @default(now()) // Fecha de creación
+}
+
+model ErrorMessage {
+  id        Int      @id @default(autoincrement()) // Identificador único con auto-incremento
+  number    String?  // Número asociado al mensaje de error, opcional
+  message   String?  // Mensaje de error, opcional
+  error     String   // Detalles del error
+  createdAt DateTime @default(now()) // Fecha de creación
+}
